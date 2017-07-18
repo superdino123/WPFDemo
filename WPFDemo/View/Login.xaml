@@ -132,7 +132,6 @@
                 <Style TargetType="Button">
                     <Setter Property="BorderThickness" Value="0"></Setter>
                     <Setter Property="Background" Value="Transparent"></Setter>
-                    <Setter Property="Template" Value="{DynamicResource BottomButtonBaseControlTemplate}"></Setter>
                 </Style>
             </StackPanel.Resources>
             <TextBlock Text="状态："></TextBlock>
