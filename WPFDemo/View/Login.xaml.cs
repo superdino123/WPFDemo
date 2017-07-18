@@ -1,39 +1,80 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using WPFDemo.Model.Binding;
+using WPFDemo.Model.DB;
 
 namespace WPFDemo.View
 {
     /// <summary>
-    /// Login.xaml 的交互逻辑
+    ///     Login.xaml 的交互逻辑
+    ///     底部区域绑定单选按钮的值，数据库绑定连接数据库名称(数据库名称没有实现INotifyPropertyChanged接口)
     /// </summary>
     public partial class Login : Window
     {
         public Login()
         {
             InitializeComponent();
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;//设置界面显示在屏幕中心
+            //设置界面显示在屏幕中心
+            WindowStartupLocation = WindowStartupLocation.CenterScreen; 
+            //初始用户名框获取焦点
+            userName.Focus();
+            //绑定连接数据库实例
+            BindingOperations.SetBinding(SqlName, ContentProperty, BindingDB.BindingDBName());
         }
 
-        #region 页面逻辑
+        #region 页面点击事件
+
         /// <summary>
-        /// 窗口关闭按钮点击事件
+        ///     窗口关闭按钮点击事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        /// <summary>
+        ///     登录按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginIn();
+        }
+
+        #endregion
+
+        #region 快捷键设置
+
+        /// <summary>
+        ///     快捷键设置
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Ctrl+F4 关闭窗口
+            if ((e.KeyboardDevice.IsKeyDown(Key.LeftCtrl) || e.KeyboardDevice.IsKeyDown(Key.RightCtrl)) &&
+                e.KeyboardDevice.IsKeyDown(Key.F4))
+                Close();
+        }
+
+        /// <summary>
+        ///     密码框回车，提交登陆
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void userPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyboardDevice.IsKeyDown(Key.Enter))
+            {
+                LoginIn();
+            }
         }
 
         #endregion
@@ -41,7 +82,7 @@ namespace WPFDemo.View
         #region 前端界面设计
 
         /// <summary>
-        /// 鼠标点击窗口时窗口头部背景变色
+        ///     鼠标点击窗口时窗口头部背景变色
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -49,13 +90,11 @@ namespace WPFDemo.View
         {
             HeaderGrid.Background = new SolidColorBrush((Color) ColorConverter.ConvertFromString("#FB8633"));
             if (e.LeftButton == MouseButtonState.Pressed)
-            {
                 DragMove();
-            }
         }
 
         /// <summary>
-        /// 窗口变成后台窗口时窗口头部背景变色
+        ///     窗口变成后台窗口时窗口头部背景变色
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -64,22 +103,31 @@ namespace WPFDemo.View
             HeaderGrid.Background = new SolidColorBrush((Color) ColorConverter.ConvertFromString("#808080"));
         }
 
-
         #endregion
 
+        #region 业务逻辑
+
         /// <summary>
-        /// 快捷键设置
+        /// 登录
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Window_KeyDown(object sender, KeyEventArgs e)
+        public void LoginIn()
         {
-            //Ctrl+F4 关闭窗口
-            if ((e.KeyboardDevice.IsKeyDown(key: Key.LeftCtrl) || e.KeyboardDevice.IsKeyDown(key: Key.RightCtrl)) &&
-                e.KeyboardDevice.IsKeyDown(key: Key.F4))
+            if (string.IsNullOrEmpty(userName.Text) || string.IsNullOrEmpty(userPassword.Password))
             {
-                this.Close();
+                MessageBox.Show("用户名和密码不能为空！");
+            }
+            else if (DBHelper.IsLoginSucceed(userName.Text, userPassword.Password))
+            {
+                var mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("用户名或密码错误！");
             }
         }
+        
+        #endregion
     }
 }

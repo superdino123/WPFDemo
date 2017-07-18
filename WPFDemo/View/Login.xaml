@@ -3,10 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:convert="clr-namespace:WPFDemo.Model.Converter"
         xmlns:local="clr-namespace:WPFDemo.View"
         mc:Ignorable="d"
         WindowStyle="None" ResizeMode="NoResize"
         Title="登录" Height="350" Width="500" MouseDown="Window_MouseDown" Deactivated="Window_Deactivated" KeyDown="Window_KeyDown" >
+    <Window.Resources>
+        <convert:AreaRadioToText x:Key="AreaConverter"></convert:AreaRadioToText>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
@@ -79,8 +83,8 @@
                 </Grid.Resources>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="用户名："></TextBlock>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="密码："></TextBlock>
-                <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
-                <PasswordBox Grid.Row="1" Grid.Column="1"></PasswordBox>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="userName"></TextBox>
+                <PasswordBox Grid.Row="1" Grid.Column="1" x:Name="userPassword" KeyDown="userPassword_KeyDown"></PasswordBox>
                 <CheckBox Grid.Row="0" Grid.Column="2" Content="记住用户名"></CheckBox>
                 <CheckBox Grid.Row="1" Grid.Column="2" Content="记住密码"></CheckBox>
             </Grid>
@@ -109,9 +113,9 @@
                         <Setter Property="Foreground" Value="#FFF"></Setter>
                     </Style>
                 </Grid.Resources>
-                <RadioButton Grid.Row="0" Grid.Column="0" Content="上海"></RadioButton>
+                <RadioButton x:Name="AreaRadioButton" Grid.Row="0" Grid.Column="0" Content="上海" IsChecked="True"></RadioButton>
                 <RadioButton Grid.Row="0" Grid.Column="1" Content="深圳"></RadioButton>
-                <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="登 录"></Button>
+                <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="登 录" Click="LoginButton_Click"></Button>
             </Grid>
         </Grid>
         <!--底部状态栏-->
@@ -127,15 +131,16 @@
                 </Style>
                 <Style TargetType="Button">
                     <Setter Property="BorderThickness" Value="0"></Setter>
-                    <Setter Property="Background" Value="#FEE1CC"></Setter>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="Template" Value="{DynamicResource BottomButtonBaseControlTemplate}"></Setter>
                 </Style>
             </StackPanel.Resources>
             <TextBlock Text="状态："></TextBlock>
             <Button x:Name="LoginStatus" Content="未登录"></Button>
             <TextBlock Text="连接库："></TextBlock>
-            <Button x:Name="SqlName" Content="myTest"></Button>
+            <Button x:Name="SqlName" Content=""></Button>
             <TextBlock Text="区域："></TextBlock>
-            <Button x:Name="AreaName" Content="ShangHai"></Button>
+            <Button x:Name="AreaName" Content="{Binding Path=IsChecked,ElementName=AreaRadioButton,Converter={StaticResource AreaConverter}}" Margin="-15,0,0,0"></Button>
         </StackPanel>
     </Grid>
 </Window>
