@@ -1,0 +1,29 @@
+﻿<fluent:RibbonWindow x:Class="WPFDemo.View.HomePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo.View"
+        xmlns:fluent="urn:fluent-ribbon"
+        mc:Ignorable="d"
+        Title="HomePage" Height="300" Width="300">
+    <Grid>
+        <fluent:Ribbon>
+            <!--Backstage-->
+            <fluent:Ribbon.Menu>
+                <fluent:Backstage>
+                </fluent:Backstage>
+            </fluent:Ribbon.Menu>
+            <!--Tabs-->
+            <fluent:RibbonTabItem Header="Tab">
+                <fluent:RibbonGroupBox Header="Group">
+                    <fluent:Button Name="buttonGreen" Header="Green"
+ Icon="Images\Green.png"
+ LargeIcon="Images\GreenLarge.png" />
+                    <fluent:Button Name="buttonGray" Header="Grey" Icon="Images\Gray.png"
+ LargeIcon="Images\GrayLarge.png" />
+                </fluent:RibbonGroupBox>
+            </fluent:RibbonTabItem>
+        </fluent:Ribbon>
+    </Grid>
+</fluent:RibbonWindow>

@@ -118,8 +118,8 @@ namespace WPFDemo.View
             }
             else if (DBHelper.IsLoginSucceed(userName.Text, userPassword.Password))
             {
-                var mainWindow = new Fluent.RibbonWindow();
-                mainWindow.Show();
+                HomePage homePage = new HomePage();
+                homePage.Show();
                 Close();
             }
             else

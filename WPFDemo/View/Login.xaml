@@ -8,8 +8,11 @@
         mc:Ignorable="d"
         WindowStyle="None" ResizeMode="NoResize"
         Title="登录" Height="350" Width="500" MouseDown="Window_MouseDown" Deactivated="Window_Deactivated" KeyDown="Window_KeyDown" >
+    
     <Window.Resources>
-        <convert:AreaRadioToText x:Key="AreaConverter"></convert:AreaRadioToText>
+        <ResourceDictionary>
+            <convert:AreaRadioToText x:Key="AreaConverter"></convert:AreaRadioToText>
+        </ResourceDictionary>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -132,6 +135,7 @@
                 <Style TargetType="Button">
                     <Setter Property="BorderThickness" Value="0"></Setter>
                     <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="Template" Value="{StaticResource BottomButtonBaseControlTemplate}"></Setter>
                 </Style>
             </StackPanel.Resources>
             <TextBlock Text="状态："></TextBlock>

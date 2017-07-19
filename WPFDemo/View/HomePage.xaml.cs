@@ -10,18 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Fluent;
 
-namespace WPFDemo
+namespace WPFDemo.View
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// HomePage.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow:RibbonWindow
+    public partial class HomePage : RibbonWindow
     {
-        public MainWindow()
+        public HomePage()
         {
             InitializeComponent();
         }
