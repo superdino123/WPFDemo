@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="WPFDemo.View.UserControl.SystemToolsUc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFDemo.View.UserControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="400"  d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#D3D3D3" >
+                <TextBlock Text="计算器" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="../../Resource/Image/Calculator.png" Grid.Row="0" Grid.Column="0" Width="50" Height="60" Margin="40,20"></Image>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="0,10,0,10">
+                    <TextBlock Text="系统计算器" Foreground="#444444"></TextBlock>
+                    <TextBlock Text="该计算器是Windows系统自带，能够满足您的基本计算需求" Foreground="#444444"></TextBlock>
+                    <TextBlock Text="启动 计算器" FontWeight="Bold" Margin="0,20,0,0" TextDecorations="Underline" Cursor="Hand" MouseDown="CalculatorTextBlock_MouseDown"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#D3D3D3" >
+                <TextBlock Text="记事本" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="../../Resource/Image/Notepad.png" Grid.Row="0" Grid.Column="0" Width="50" Height="60" Margin="40,20"></Image>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="0,10,0,10">
+                    <TextBlock Text="系统记事本" Foreground="#444444"></TextBlock>
+                    <TextBlock Text="该记事本是Windows系统自带，能够满足您的基本编辑需求" Foreground="#444444"></TextBlock>
+                    <TextBlock Text="启动 记事本" FontWeight="Bold" Margin="0,20,0,0" TextDecorations="Underline" Cursor="Hand" MouseDown="NotepadTextBlock_MouseDown"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#D3D3D3" >
+                <TextBlock Text="日志" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="../../Resource/Image/Journal.png" Grid.Row="0" Grid.Column="0" Width="50" Height="60" Margin="40,20"></Image>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="0,10,0,10">
+                    <TextBlock Text="日志文件夹" Foreground="#444444"></TextBlock>
+                    <TextBlock Text="可以帮助您快速打开本地的日志文件夹所在目录" Foreground="#444444"></TextBlock>
+                    <TextBlock Text="启动 日志" FontWeight="Bold" Margin="0,20,0,0" TextDecorations="Underline" Cursor="Hand" MouseDown="JournalTextBlock_MouseDown"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

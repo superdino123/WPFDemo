@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Fluent;
+using WPFDemo.ViewModel;
 
 namespace WPFDemo.View
 {
@@ -20,9 +21,10 @@ namespace WPFDemo.View
     /// </summary>
     public partial class HomePage : RibbonWindow
     {
+
         public HomePage()
         {
-            InitializeComponent();
+            InitializeComponent();;
         }
     }
 }

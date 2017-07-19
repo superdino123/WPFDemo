@@ -69,6 +69,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\UserControl\SystemToolsUc.xaml.cs">
+      <DependentUpon>SystemToolsUc.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -77,7 +80,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Resources\DateTimeNow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Resources\LoginBottomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControl\SystemToolsUc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,6 +125,15 @@
       <Project>{4c92fcf4-3561-499f-bc5b-f2f089863047}</Project>
       <Name>Fluent.Ribbon</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\Add.png" />
+    <Resource Include="Resource\Image\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\Calculator.png" />
+    <Resource Include="Resource\Image\Journal.png" />
+    <Resource Include="Resource\Image\Notepad.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

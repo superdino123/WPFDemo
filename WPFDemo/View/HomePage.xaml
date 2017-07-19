@@ -3,27 +3,75 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFDemo.View"
+        xmlns:local="clr-namespace:WPFDemo.View.UserControl"
         xmlns:fluent="urn:fluent-ribbon"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="HomePage" Height="300" Width="300">
+        Title="简易资讯系统" Height="600" Width="1200" WindowState="Maximized">
     <Grid>
         <fluent:Ribbon>
-            <!--Backstage-->
+            <!--左侧扩展栏菜单-->
             <fluent:Ribbon.Menu>
                 <fluent:Backstage>
+                    <fluent:BackstageTabControl>
+                        <fluent:BackstageTabItem Header="工具">
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                                          VerticalScrollBarVisibility="Auto"
+                                          HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Stretch">
+                                <Grid Width="Auto" Height="Auto">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <!--当前时间-->
+                                    <TextBlock Grid.Row="0" Style="{StaticResource DateTimeStyle}"></TextBlock>
+                                    <!--计算器，记事本，本地日志导航-->
+                                    <local:SystemToolsUc Grid.Row="1">
+                                    </local:SystemToolsUc> 
+                                </Grid>
+                            </ScrollViewer>
+                        </fluent:BackstageTabItem>
+                        <fluent:Button Header="帮助"></fluent:Button>
+                    </fluent:BackstageTabControl>
                 </fluent:Backstage>
             </fluent:Ribbon.Menu>
-            <!--Tabs-->
-            <fluent:RibbonTabItem Header="Tab">
-                <fluent:RibbonGroupBox Header="Group">
-                    <fluent:Button Name="buttonGreen" Header="Green"
- Icon="Images\Green.png"
- LargeIcon="Images\GreenLarge.png" />
-                    <fluent:Button Name="buttonGray" Header="Grey" Icon="Images\Gray.png"
- LargeIcon="Images\GrayLarge.png" />
+            <!--头部菜单-->
+            <fluent:RibbonTabItem Header="首页">
+                <fluent:RibbonGroupBox Header="公告分类">
+                    <Grid Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <fluent:RadioButton Grid.Row="0" Grid.Column="0" Header="公告" HorizontalAlignment="Center" IsChecked="True"></fluent:RadioButton>
+                        <fluent:RadioButton Grid.Row="0" Grid.Column="1" Header="港股中文" HorizontalAlignment="Center"></fluent:RadioButton>
+                        <fluent:RadioButton Grid.Row="0" Grid.Column="2" Header="期货" HorizontalAlignment="Center"></fluent:RadioButton>
+                        <fluent:RadioButton Grid.Row="1" Grid.Column="0" Header="美股" HorizontalAlignment="Center"></fluent:RadioButton>
+                        <fluent:RadioButton Grid.Row="1" Grid.Column="1" Header="港股英文" HorizontalAlignment="Center"></fluent:RadioButton>
+                    </Grid>
+                </fluent:RibbonGroupBox>
+                <fluent:RibbonGroupBox Header="新增/删除">
+                    <Grid Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <fluent:Button Grid.Column="0" Header="公告" HorizontalAlignment="Center">
+
+                        </fluent:Button>
+                        <fluent:Button Grid.Column="1" Header="港股英文" HorizontalAlignment="Center">
+                            
+                        </fluent:Button>
+                    </Grid>
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
-        </fluent:Ribbon>
+        </fluent:Ribbon>
     </Grid>
 </fluent:RibbonWindow>
