@@ -84,7 +84,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Resources\IndexBottom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Resources\LoginBottomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Resources\TabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +132,10 @@
     <ProjectReference Include="C:\Users\diplantInEastMoney\Downloads\Fluent.Ribbon-develop\Fluent.Ribbon-develop\Fluent.Ribbon\Fluent.Ribbon.csproj">
       <Project>{4c92fcf4-3561-499f-bc5b-f2f089863047}</Project>
       <Name>Fluent.Ribbon</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\diplantInEastMoney\Downloads\MahApps.Metro.IconPacks-dev\MahApps.Metro.IconPacks-dev\src\MahApps.Metro.IconPacks\MahApps.Metro.IconPacks.csproj">
+      <Project>{e55968fd-91b1-4ace-b711-30724797a662}</Project>
+      <Name>MahApps.Metro.IconPacks</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

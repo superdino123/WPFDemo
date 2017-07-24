@@ -13,6 +13,10 @@
                 <ResourceDictionary Source="View/Resources/LoginBottomButton.xaml"></ResourceDictionary>
                 <!--左侧菜单中顶部时间-->
                 <ResourceDictionary Source="View/Resources/DateTimeNow.xaml"></ResourceDictionary>
+                <!--首页左侧TabControl-->
+                <ResourceDictionary Source="View/Resources/TabControl.xaml"></ResourceDictionary>
+                <!--首页底部栏样式-->
+                <ResourceDictionary Source="View/Resources/IndexBottom.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -7,20 +7,40 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFDemo", "WPFDemo\WPFDemo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluent.Ribbon", "C:\Users\diplantInEastMoney\Downloads\Fluent.Ribbon-develop\Fluent.Ribbon-develop\Fluent.Ribbon\Fluent.Ribbon.csproj", "{4C92FCF4-3561-499F-BC5B-F2F089863047}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahApps.Metro.IconPacks", "C:\Users\diplantInEastMoney\Downloads\MahApps.Metro.IconPacks-dev\MahApps.Metro.IconPacks-dev\src\MahApps.Metro.IconPacks\MahApps.Metro.IconPacks.csproj", "{E55968FD-91B1-4ACE-B711-30724797A662}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release_NET45|Any CPU = Release_NET45|Any CPU
+		Release_NET46|Any CPU = Release_NET46|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F9445B8B-0E7D-46B7-8B41-8365AA73DAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9445B8B-0E7D-46B7-8B41-8365AA73DAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9445B8B-0E7D-46B7-8B41-8365AA73DAB3}.Release_NET45|Any CPU.ActiveCfg = Release|Any CPU
+		{F9445B8B-0E7D-46B7-8B41-8365AA73DAB3}.Release_NET45|Any CPU.Build.0 = Release|Any CPU
+		{F9445B8B-0E7D-46B7-8B41-8365AA73DAB3}.Release_NET46|Any CPU.ActiveCfg = Release|Any CPU
+		{F9445B8B-0E7D-46B7-8B41-8365AA73DAB3}.Release_NET46|Any CPU.Build.0 = Release|Any CPU
 		{F9445B8B-0E7D-46B7-8B41-8365AA73DAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9445B8B-0E7D-46B7-8B41-8365AA73DAB3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Release_NET45|Any CPU.ActiveCfg = Release|Any CPU
+		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Release_NET45|Any CPU.Build.0 = Release|Any CPU
+		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Release_NET46|Any CPU.ActiveCfg = Release|Any CPU
+		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Release_NET46|Any CPU.Build.0 = Release|Any CPU
 		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E55968FD-91B1-4ACE-B711-30724797A662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E55968FD-91B1-4ACE-B711-30724797A662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E55968FD-91B1-4ACE-B711-30724797A662}.Release_NET45|Any CPU.ActiveCfg = Release_NET45|Any CPU
+		{E55968FD-91B1-4ACE-B711-30724797A662}.Release_NET45|Any CPU.Build.0 = Release_NET45|Any CPU
+		{E55968FD-91B1-4ACE-B711-30724797A662}.Release_NET46|Any CPU.ActiveCfg = Release_NET46|Any CPU
+		{E55968FD-91B1-4ACE-B711-30724797A662}.Release_NET46|Any CPU.Build.0 = Release_NET46|Any CPU
+		{E55968FD-91B1-4ACE-B711-30724797A662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E55968FD-91B1-4ACE-B711-30724797A662}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
