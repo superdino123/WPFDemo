@@ -68,6 +68,8 @@
     <Compile Include="ViewModel\Enum\SourceNameEnum.cs" />
     <Compile Include="ViewModel\Enum\PublishTypeEnum.cs" />
     <Compile Include="ViewModel\Enum\TaskStatusEnum.cs" />
+    <Compile Include="ViewModel\IndexDataGrid.cs" />
+    <Compile Include="ViewModel\IndexDataGridModel.cs" />
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -94,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Resources\IndexBottom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Resources\IndexDataGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

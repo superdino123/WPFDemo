@@ -3,6 +3,7 @@
     <!--首页正文左侧tabControl样式-->
     <Style x:Key="IndexTabControl" TargetType="TabControl">
         <Setter Property="TabStripPlacement" Value="Left"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
     </Style>
     <!--首页正文左侧tabItem样式-->
     <Style x:Key="IndexTabControlItem" TargetType="TabItem">

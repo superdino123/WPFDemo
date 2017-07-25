@@ -21,10 +21,23 @@ namespace WPFDemo.View
     /// </summary>
     public partial class HomePage : RibbonWindow
     {
-
+        IndexDataGridModel indexDataGridModel = new IndexDataGridModel();
+        
         public HomePage()
         {
-            InitializeComponent();;
+            InitializeComponent();
+            //指定DataGrid的数据源
+            DataGrid.ItemsSource = indexDataGridModel.ListIndexDataGrid;
+        }
+
+        /// <summary>
+        /// 加载DataGrid时加载行号
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            e.Row.Header = (e.Row.GetIndex() + 1).ToString();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace WPFDemo.Model.DB
@@ -45,6 +46,22 @@ namespace WPFDemo.Model.DB
             {
                 throw;
             }
+        }
+
+        /// <summary>
+        /// 在视图中查询出某类(如公告)数据
+        /// </summary>
+        /// <returns></returns>
+        public static DataSet SelectAnnounceInfo()
+        {
+            SqlConnection conn = new SqlConnection(source);
+            conn.Open();
+            string select = "select * from v_info where infoType = 0";
+            SqlDataAdapter da = new SqlDataAdapter(select, conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "IndexInfo");
+            conn.Close();
+            return ds;
         }
     }
 }
