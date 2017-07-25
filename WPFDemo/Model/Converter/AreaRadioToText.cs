@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
-using WPFDemo.ViewModel;
+using WPFDemo.ViewModel.Enum;
 
 namespace WPFDemo.Model.Converter
 {

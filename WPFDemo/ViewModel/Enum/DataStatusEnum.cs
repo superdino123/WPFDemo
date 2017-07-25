@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPFDemo.ViewModel
+namespace WPFDemo.ViewModel.Enum
 {
-    public enum AreaEnum
+    public enum DataStatusEnum
     {
-       ShangHai,
-       ShenZhen
+        未发布,
+        已发布
     }
 }

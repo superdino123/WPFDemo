@@ -58,7 +58,16 @@
     <Compile Include="Model\Binding\BindingDB.cs" />
     <Compile Include="Model\Converter\AreaRadioToText.cs" />
     <Compile Include="Model\DB\DBHelper.cs" />
-    <Compile Include="ViewModel\AreaEnum.cs" />
+    <Compile Include="ViewModel\Enum\AnnounceTypeEnum.cs" />
+    <Compile Include="ViewModel\Enum\AreaEnum.cs" />
+    <Compile Include="ViewModel\Enum\AttachTypeEnum.cs" />
+    <Compile Include="ViewModel\Enum\ColumnClassEnum.cs" />
+    <Compile Include="ViewModel\Enum\DataStatusEnum.cs" />
+    <Compile Include="ViewModel\Enum\LanguageTypeEnum.cs" />
+    <Compile Include="ViewModel\Enum\LayerEnum.cs" />
+    <Compile Include="ViewModel\Enum\SourceNameEnum.cs" />
+    <Compile Include="ViewModel\Enum\PublishTypeEnum.cs" />
+    <Compile Include="ViewModel\Enum\TaskStatusEnum.cs" />
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
