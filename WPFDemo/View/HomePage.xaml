@@ -16,6 +16,14 @@
         </Grid.RowDefinitions>
         <!--菜单栏-->
         <fluent:Ribbon Grid.Row="0">
+            <!--右上角工具栏-->
+            <fluent:Ribbon.ToolBarItems>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="郑伟地" Padding="10,0"></TextBlock>
+                    <TextBlock Text="E1N1Test" Padding="10,0"></TextBlock>
+                    <TextBlock Text="2017.04.10 17:24:12" Padding="10,0"></TextBlock>
+                </StackPanel>
+            </fluent:Ribbon.ToolBarItems>
             <!--左侧扩展栏菜单-->
             <fluent:Ribbon.Menu>
                 <fluent:Backstage>
@@ -134,27 +142,31 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
+                <!--编辑状态选项-->
                 <TabControl Grid.Row="0" Style="{StaticResource IndexTopTabControl}">
                     <TabItem Header="待编辑" Style="{DynamicResource IndexTopTabControlItem}"></TabItem>
                     <TabItem Header="待完善" Style="{DynamicResource IndexTopTabControlItem}"></TabItem>
                     <TabItem Header="已发布检索" Style="{DynamicResource IndexTopTabControlItem}"></TabItem>
                 </TabControl>
+                <!--DataGrid内容栏-->
                 <Grid Grid.Row="1">
                     <DataGrid x:Name="DataGrid" Style="{StaticResource IndexDataGrid}" LoadingRow="DataGrid_LoadingRow">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="入库时间" Binding="{Binding StorageTime}" ElementStyle="{StaticResource CenterAlignmentStyle}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="资讯编码" Binding="{Binding InfoCode}" ElementStyle="{StaticResource CenterAlignmentStyle}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="资讯标题" Binding="{Binding InfoTitle}" ElementStyle="{StaticResource CenterAlignmentStyle}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="URL标题" Binding="{Binding URL}" ElementStyle="{StaticResource CenterAlignmentStyle}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="资讯来源" Binding="{Binding InfoSource}" ElementStyle="{StaticResource CenterAlignmentStyle}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="资讯类型" Binding="{Binding InfoType}" ElementStyle="{StaticResource CenterAlignmentStyle}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="数据状态" Binding="{Binding DataStatus}" ElementStyle="{StaticResource CenterAlignmentStyle}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="任务状态" Binding="{Binding TaskStatus}" ElementStyle="{StaticResource CenterAlignmentStyle}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="操作人" Binding="{Binding UserName}" ElementStyle="{StaticResource CenterAlignmentStyle}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="入库时间" Binding="{Binding StorageTime}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="160"></DataGridTextColumn>
+                            <DataGridTextColumn Header="资讯编码" Binding="{Binding InfoCode}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="180"></DataGridTextColumn>
+                            <DataGridTextColumn Header="资讯标题" Binding="{Binding InfoTitle}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="350"></DataGridTextColumn>
+                            <DataGridTextColumn Header="URL标题" Binding="{Binding URL}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="200"></DataGridTextColumn>
+                            <DataGridTextColumn Header="资讯来源" Binding="{Binding InfoSource}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="160"></DataGridTextColumn>
+                            <DataGridTextColumn Header="资讯类型" Binding="{Binding InfoType}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="100"></DataGridTextColumn>
+                            <DataGridTextColumn Header="数据状态" Binding="{Binding DataStatus}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="100"></DataGridTextColumn>
+                            <DataGridTextColumn Header="任务状态" Binding="{Binding TaskStatus}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="80"></DataGridTextColumn>
+                            <DataGridTextColumn Header="操作人" Binding="{Binding UserName}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="100"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
+                <!--分页-->
             </Grid>
         </Grid>
         <!--底部当前页面记录数-->

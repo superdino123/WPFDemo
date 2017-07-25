@@ -6,11 +6,9 @@
         <Setter Property="IsReadOnly" Value="True"></Setter>
         <Setter Property="CanUserReorderColumns" Value="True"></Setter>
         <Setter Property="CanUserSortColumns" Value="True"></Setter>
-        <Setter Property="HorizontalGridLinesBrush" Value="Transparent"></Setter>
-        <Setter Property="VerticalGridLinesBrush" Value="Transparent"></Setter>
+        <Setter Property="GridLinesVisibility" Value="None"></Setter>
         <Setter Property="Background" Value="#fff"></Setter>
         <Setter Property="BorderThickness" Value="0"></Setter>
-        <Setter Property="VerticalAlignment" Value="Center"></Setter>
         <!--标题栏样式-->
         <Setter Property="ColumnHeaderStyle">
             <Setter.Value>
@@ -48,9 +46,23 @@
                 </Style>
             </Setter.Value>
         </Setter>
+        <Setter Property="CellStyle">
+            <Setter.Value>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="BorderThickness" Value="0"></Setter>
+                    <Style.Triggers >
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#41B1E1"/>
+                            <Setter Property="Foreground" Value="#fff"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Setter.Value>
+        </Setter>
     </Style>
     <!--因为datagrid内容不能通过属性设置居中的特殊性，多写一个单独的style-->
     <Style x:Key="CenterAlignmentStyle" TargetType="TextBlock">
         <Setter Property="VerticalAlignment"  Value="Center"/>
+        <Setter Property="Padding" Value="5,0,0,0"></Setter>
     </Style>
 </ResourceDictionary>
