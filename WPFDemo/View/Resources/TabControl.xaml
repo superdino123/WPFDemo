@@ -1,10 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!--tabControl样式-->
+    <!--首页正文左侧tabControl样式-->
     <Style x:Key="IndexTabControl" TargetType="TabControl">
         <Setter Property="TabStripPlacement" Value="Left"></Setter>
     </Style>
-    <!--tabItem样式-->
+    <!--首页正文左侧tabItem样式-->
     <Style x:Key="IndexTabControlItem" TargetType="TabItem">
         <Setter Property="Foreground" Value="#fff"></Setter>
         <Setter Property="FontSize" Value="14"></Setter>
@@ -47,7 +47,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!--最后一个用于填充剩余部分用来充当背景的tabItem样式-->
+    <!--首页正文左侧最后一个用于填充剩余部分用来充当背景的tabItem样式-->
     <Style x:Key="LastTabControlItem" TargetType="TabItem">
         <Setter Property="Template">
             <Setter.Value>
@@ -64,6 +64,61 @@
                               />
                         </Border>
                     </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--首页正文顶部tabControl样式-->
+    <Style x:Key="IndexTopTabControl" TargetType="TabControl">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+    </Style>
+    <!--首页正文顶部tabControlItem样式-->
+    <Style x:Key="IndexTopTabControlItem" TargetType="TabItem">
+        <Setter Property="Foreground" Value="#BEBEBE"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid SnapsToDevicePixels="True">
+                        <Border Padding="10,20">
+                            <ContentPresenter x:Name="contentPresenter"
+                              Content="{TemplateBinding Header}" 
+                              ContentSource="Header" 
+                              Focusable="True" 
+                              HorizontalAlignment="Center"
+                              RecognizesAccessKey="True" 
+                              VerticalAlignment="Center"
+                              />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!--靠顶部排列并且被选中时-->
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Top"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Foreground" Value="#46B4E2"></Setter>
+                        </MultiDataTrigger>
+                        <!--靠顶部排列并且鼠标放在未选中按钮上时-->
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Top"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Foreground" Value="#000"></Setter>
+                        </MultiDataTrigger>
+                        <!--靠顶部排列并且鼠标放在选中按钮上时-->
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" Value="Top"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Foreground" Value="#1778A4"></Setter>
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
