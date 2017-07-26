@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--模块样式-->
+    <Style x:Key="InfoEditGridStyle" TargetType="Grid">
+        <Setter Property="Margin" Value="0,15,0,0"></Setter>
+    </Style>
+    <!--标题样式-->
+    <Style x:Key="InfoEditTitle" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="Padding" Value="0,15,0,0"></Setter>
+    </Style>
+    <!--模块小标题样式-->
+    <Style x:Key="ToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Width" Value="930"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="Padding" Value="10"></Setter>
+        <Setter Property="Background" Value="#F5F5F5"></Setter>
+        <Setter Property="Margin" Value="5,0,0,0"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+    </Style>
+    <!--模块内容栏外边框样式-->
+    <Style x:Key="InfoEditBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="#E0E0E0"></Setter>
+        <Setter Property="Padding" Value="50,20"></Setter>
+    </Style>
+    <!--模板内容栏StackPanel样式-->
+    <Style x:Key="InfoEditStackPanelStyle" TargetType="StackPanel">
+        <Setter Property="Margin" Value="0,0,0,10"></Setter>
+        <Setter Property="Orientation" Value="Horizontal"></Setter>
+        <Setter Property="Height" Value="30"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+    <!--填写框TextBlock样式-->
+    <Style x:Key="InfoEditTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Width" Value="90"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+    <!--填写框TextBox样式,改这个的时候要改一下（特例：非固定长度输入框）-->
+    <Style x:Key="InfoEditTextBoxStyle" TargetType="TextBox">
+        <Setter Property="Width" Value="300"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Padding" Value="6"></Setter>
+    </Style>
+    <!--公告基本信息按钮样式-->
+    <Style x:Key="InfoEditButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#fff"></Setter>
+        <Setter Property="Padding" Value="20,0"></Setter>
+        <Setter Property="Margin" Value="20,0,0,0"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+    </Style>
+    <!--特例：非固定长度输入框-->
+    <Style x:Key="InfoEditTextBoxSpecialStyle" TargetType="TextBox">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Padding" Value="6"></Setter>
+    </Style>
+    <!--公告所属栏目按钮样式-->
+    <Style x:Key="InfoEditColumnButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#fff"></Setter>
+        <Setter Property="Padding" Value="20,0"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+    </Style>
+</ResourceDictionary>

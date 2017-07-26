@@ -10,44 +10,44 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Fluent;
 using WPFDemo.ViewModel;
 
-namespace WPFDemo.View
+namespace WPFDemo.View.UserControl
 {
     /// <summary>
-    /// HomePage.xaml 的交互逻辑
+    /// IndexContext.xaml 的交互逻辑
     /// </summary>
-    public partial class HomePage : RibbonWindow
+    public partial class IndexContext : System.Windows.Controls.UserControl
     {
-        
-        public HomePage()
+        IndexDataGridModel indexDataGridModel = new IndexDataGridModel();
+
+        public IndexContext()
         {
             InitializeComponent();
+            //指定DataGrid的数据源
+            DataGrid.ItemsSource = indexDataGridModel.ListIndexDataGrid;
         }
 
         /// <summary>
-        /// 测试按钮1点击事件
+        /// 加载DataGrid时加载行号
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button1_Click(object sender, RoutedEventArgs e)
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            //InfoDataEdit infoDataEdit = new InfoDataEdit();
-            //Grid grid = infoDataEdit.GridNew;
-            //infoDataEdit.GridFather.Children.RemoveAt(0);
-            //ContentGrid.Visibility = Visibility.Collapsed;
-            //IndexGrid.Children.Add(grid);
+            e.Row.Header = (e.Row.GetIndex() + 1).ToString();
         }
+
         /// <summary>
-        /// 测试按钮2点击事件
+        /// 双击进入某一条数据编辑界面 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button2_Click(object sender, RoutedEventArgs e)
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            
+
         }
     }
 }

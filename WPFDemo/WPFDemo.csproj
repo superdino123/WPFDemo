@@ -80,6 +80,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\UserControl\IndexContext.xaml.cs">
+      <DependentUpon>IndexContext.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\InfoDataEditUc.xaml.cs">
+      <DependentUpon>InfoDataEditUc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControl\SystemToolsUc.xaml.cs">
       <DependentUpon>SystemToolsUc.xaml</DependentUpon>
     </Compile>
@@ -103,11 +109,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Resources\InfoDataEditStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Resources\LoginBottomButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Resources\TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControl\IndexContext.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControl\InfoDataEditUc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

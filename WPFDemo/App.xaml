@@ -19,6 +19,9 @@
                 <ResourceDictionary Source="View/Resources/IndexBottom.xaml"></ResourceDictionary>
                 <!--首页DataGrid样式-->
                 <ResourceDictionary Source="View/Resources/IndexDataGrid.xaml"></ResourceDictionary>
+                <!--样式资源字典由一个模块一个资源字典变更为一个界面一个资源字典-->
+                <!--编辑界面样式-->
+                <ResourceDictionary Source="View/Resources/InfoDataEditStyle.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
