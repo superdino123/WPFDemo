@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Fluent;
+using WPFDemo.View.UserControl;
 using WPFDemo.ViewModel;
 
 namespace WPFDemo.View
@@ -21,10 +22,12 @@ namespace WPFDemo.View
     /// </summary>
     public partial class HomePage : RibbonWindow
     {
-        
+        readonly IndexContext indexContext = new IndexContext();
+
         public HomePage()
         {
             InitializeComponent();
+            ContentGrid.Children.Add(indexContext);
         }
 
         /// <summary>
@@ -40,6 +43,7 @@ namespace WPFDemo.View
             //ContentGrid.Visibility = Visibility.Collapsed;
             //IndexGrid.Children.Add(grid);
         }
+
         /// <summary>
         /// 测试按钮2点击事件
         /// </summary>
@@ -48,6 +52,17 @@ namespace WPFDemo.View
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        /// <summary>
+        /// 取消按钮的点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            ContentGrid.Children.Clear();
+            ContentGrid.Children.Add(indexContext);
         }
     }
 }

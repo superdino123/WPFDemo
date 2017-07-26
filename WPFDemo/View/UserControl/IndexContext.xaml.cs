@@ -47,7 +47,7 @@ namespace WPFDemo.View.UserControl
         /// <param name="e"></param>
         private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            
         }
     }
 }

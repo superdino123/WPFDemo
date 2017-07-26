@@ -101,7 +101,7 @@
                                 <iconPacks:PackIconModern Kind="EditBox" Width="26" Height="26"/>
                             </fluent:Button.LargeIcon>
                         </fluent:Button>
-                        <fluent:Button Grid.Column="1" Header="取消" HorizontalAlignment="Center">
+                        <fluent:Button Grid.Column="1" Header="取消" HorizontalAlignment="Center" Click="CancelButton_Click">
                             <fluent:Button.LargeIcon>
                                 <iconPacks:PackIconModern Kind="UndoPoint"  Width="26" Height="26"/>
                             </fluent:Button.LargeIcon>
@@ -128,7 +128,9 @@
             </fluent:RibbonTabItem>
         </fluent:Ribbon>
         <!--资讯列表-->
-        <local:InfoDataEditUc Grid.Row="1"></local:InfoDataEditUc>
+        <Grid Grid.Row="1" x:Name="ContentGrid">
+            <local:InfoDataEditUc></local:InfoDataEditUc>
+        </Grid>
         <!--底部当前页面记录数-->
         <StackPanel Grid.Row="2" Background="#2B579A" Orientation="Horizontal">
             <TextBlock Text="当前列表记录数：" Style="{StaticResource IndexBottom}"></TextBlock>

@@ -58,6 +58,7 @@
     <Compile Include="Model\Binding\BindingDB.cs" />
     <Compile Include="Model\Converter\AreaRadioToText.cs" />
     <Compile Include="Model\DB\DBHelper.cs" />
+    <Compile Include="ViewModel\CommonData.cs" />
     <Compile Include="ViewModel\Enum\AnnounceTypeEnum.cs" />
     <Compile Include="ViewModel\Enum\AreaEnum.cs" />
     <Compile Include="ViewModel\Enum\AttachTypeEnum.cs" />
