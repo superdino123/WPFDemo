@@ -101,7 +101,7 @@
                                 <iconPacks:PackIconModern Kind="EditBox" Width="26" Height="26"/>
                             </fluent:Button.LargeIcon>
                         </fluent:Button>
-                        <fluent:Button Grid.Column="1" Header="取消" HorizontalAlignment="Center" Click="CancelButton_Click">
+                        <fluent:Button Grid.Column="1" Header="取消" HorizontalAlignment="Center">
                             <fluent:Button.LargeIcon>
                                 <iconPacks:PackIconModern Kind="UndoPoint"  Width="26" Height="26"/>
                             </fluent:Button.LargeIcon>
@@ -129,7 +129,57 @@
         </fluent:Ribbon>
         <!--资讯列表-->
         <Grid Grid.Row="1" x:Name="ContentGrid">
-            <local:InfoDataEditUc></local:InfoDataEditUc>
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="3"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--左侧tab导航-->
+                <TabControl Style="{StaticResource IndexTabControl}" Grid.Row="0" Grid.Column="0">
+                    <TabItem Header="公告" Style="{StaticResource IndexTabControlItem}"></TabItem>
+                    <TabItem Header="研报" Style="{StaticResource IndexTabControlItem}"></TabItem>
+                    <TabItem Header="新闻" Style="{StaticResource IndexTabControlItem}"></TabItem>
+                    <TabItem Header="法律法规" Style="{StaticResource IndexTabControlItem}"></TabItem>
+                    <TabItem Header="投资者关系" Style="{StaticResource IndexTabControlItem}"></TabItem>
+                </TabControl>
+                <Grid Grid.Row="1" Grid.Column="0" Background="#2B579A" Width="130" HorizontalAlignment="Left"></Grid>
+                <!--中间滑动条-->
+                <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></GridSplitter>
+                <!--右侧信息列表-->
+            <Grid Grid.Row="0" Grid.Column="2" RowSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--编辑状态选项-->
+                <TabControl Grid.Row="0" Style="{StaticResource IndexTopTabControl}">
+                    <TabItem Header="待编辑" Style="{DynamicResource IndexTopTabControlItem}"></TabItem>
+                    <TabItem Header="待完善" Style="{DynamicResource IndexTopTabControlItem}"></TabItem>
+                    <TabItem Header="已发布检索" Style="{DynamicResource IndexTopTabControlItem}"></TabItem>
+                </TabControl>
+                <!--DataGrid内容栏-->
+                <Grid Grid.Row="1">
+                    <DataGrid x:Name="DataGrid" Style="{StaticResource IndexDataGrid}" LoadingRow="DataGrid_LoadingRow">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="入库时间" Binding="{Binding StorageTime}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="160"></DataGridTextColumn>
+                            <DataGridTextColumn Header="资讯编码" Binding="{Binding InfoCode}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="180"></DataGridTextColumn>
+                            <DataGridTextColumn Header="资讯标题" Binding="{Binding InfoTitle}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="350"></DataGridTextColumn>
+                            <DataGridTextColumn Header="URL标题" Binding="{Binding URL}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="200"></DataGridTextColumn>
+                            <DataGridTextColumn Header="资讯来源" Binding="{Binding InfoSource}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="160"></DataGridTextColumn>
+                            <DataGridTextColumn Header="资讯类型" Binding="{Binding InfoType}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="100"></DataGridTextColumn>
+                            <DataGridTextColumn Header="数据状态" Binding="{Binding DataStatus}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="100"></DataGridTextColumn>
+                            <DataGridTextColumn Header="任务状态" Binding="{Binding TaskStatus}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="80"></DataGridTextColumn>
+                            <DataGridTextColumn Header="操作人" Binding="{Binding UserName}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="100"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+                <!--分页-->
+            </Grid>
         </Grid>
         <!--底部当前页面记录数-->
         <StackPanel Grid.Row="2" Background="#2B579A" Orientation="Horizontal">

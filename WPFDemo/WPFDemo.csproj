@@ -58,7 +58,6 @@
     <Compile Include="Model\Binding\BindingDB.cs" />
     <Compile Include="Model\Converter\AreaRadioToText.cs" />
     <Compile Include="Model\DB\DBHelper.cs" />
-    <Compile Include="ViewModel\CommonData.cs" />
     <Compile Include="ViewModel\Enum\AnnounceTypeEnum.cs" />
     <Compile Include="ViewModel\Enum\AreaEnum.cs" />
     <Compile Include="ViewModel\Enum\AttachTypeEnum.cs" />
@@ -180,6 +179,9 @@
     <Resource Include="Resource\Image\Calculator.png" />
     <Resource Include="Resource\Image\Journal.png" />
     <Resource Include="Resource\Image\Notepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\RoutedEvent\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

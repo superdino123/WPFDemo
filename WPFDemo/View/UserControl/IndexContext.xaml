@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFDemo.View.UserControl"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="1200">
+             d:DesignHeight="500" d:DesignWidth="1200" Loaded="UserControl_Loaded">
     <!--资讯列表-->
     <Grid x:Name="ContentGrid">
         <Grid.ColumnDefinitions>
@@ -43,7 +43,7 @@
             </TabControl>
             <!--DataGrid内容栏-->
             <Grid Grid.Row="1">
-                <DataGrid x:Name="DataGrid" Style="{StaticResource IndexDataGrid}" LoadingRow="DataGrid_LoadingRow" MouseDoubleClick="DataGrid_MouseDoubleClick">
+                <DataGrid x:Name="DataGrid" Style="{StaticResource IndexDataGrid}" LoadingRow="DataGrid_LoadingRow">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="入库时间" Binding="{Binding StorageTime}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="160"></DataGridTextColumn>
                         <DataGridTextColumn Header="资讯编码" Binding="{Binding InfoCode}" ElementStyle="{StaticResource CenterAlignmentStyle}" Width="180"></DataGridTextColumn>

@@ -23,9 +23,13 @@ namespace WPFDemo.View.UserControl
     {
         IndexDataGridModel indexDataGridModel = new IndexDataGridModel();
 
-        public IndexContext()
+        private HomePage indexWindow;
+
+        public IndexContext(HomePage indexWindow)
         {
             InitializeComponent();
+            //获取当前主窗口
+            this.indexWindow = indexWindow;
             //指定DataGrid的数据源
             DataGrid.ItemsSource = indexDataGridModel.ListIndexDataGrid;
         }
@@ -41,13 +45,14 @@ namespace WPFDemo.View.UserControl
         }
 
         /// <summary>
-        /// 双击进入某一条数据编辑界面 
+        /// 加载控件时添加内置路由事件
+        /// 指定首页执行 跳转编辑页的方法
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            DataGrid.AddHandler(DataGrid.MouseDoubleClickEvent,new RoutedEventHandler(indexWindow.Button2_Click));
         }
     }
 }

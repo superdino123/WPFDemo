@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,12 +23,13 @@ namespace WPFDemo.View
     /// </summary>
     public partial class HomePage : RibbonWindow
     {
-        readonly IndexContext indexContext = new IndexContext();
+        IndexDataGridModel indexDataGridModel = new IndexDataGridModel();     
 
         public HomePage()
         {
             InitializeComponent();
-            ContentGrid.Children.Add(indexContext);
+            //指定DataGrid的数据源
+            DataGrid.ItemsSource = indexDataGridModel.ListIndexDataGrid;
         }
 
         /// <summary>
@@ -49,20 +51,21 @@ namespace WPFDemo.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button2_Click(object sender, RoutedEventArgs e)
+        public void Button2_Click(object sender, RoutedEventArgs e)
         {
-            
+            InfoDataEditUc infoDataEditUc = new InfoDataEditUc();
+            ContentGrid.Children.Clear();
+            ContentGrid.Children.Add(infoDataEditUc);
         }
 
         /// <summary>
-        /// 取消按钮的点击事件
+        /// 加载DataGrid时加载行号
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            ContentGrid.Children.Clear();
-            ContentGrid.Children.Add(indexContext);
+            e.Row.Header = (e.Row.GetIndex() + 1).ToString();
         }
     }
 }
