@@ -5,7 +5,7 @@
              StartupUri="View/HomePage.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <!--资源合并字典-->
+            <!-- 资源合并字典 -->
             <ResourceDictionary.MergedDictionaries>
                 <!--Ribbon框架-->
                 <ResourceDictionary Source="/Fluent;Component/Themes/Generic.xaml"></ResourceDictionary>
